@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Easy Checkout - Amazon Deal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Today Deals - Easy Checkout</title>
 
   <!-- ✅ Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-10JRRNWH77"></script>
@@ -24,75 +24,168 @@
   </script>
 
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f3f3f3;
       color: #232f3e;
+      line-height: 1.6;
     }
+
     header {
       background-color: #232f3e;
-      color: white;
-      padding: 20px 0;
+      color: #fff;
+      text-align: center;
+      padding: 30px 15px;
     }
+
+    header img {
+      max-width: 180px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
     header h1 {
-      margin: 0;
-      font-size: 36px;
+      font-size: 32px;
+      margin-bottom: 8px;
     }
+
+    header p {
+      font-size: 16px;
+    }
+
     .banner {
       width: 100%;
-      max-height: 400px;
+      height: auto;
+      max-height: 350px;
       object-fit: cover;
     }
+
     .container {
-      padding: 40px 20px;
+      padding: 30px 15px;
       text-align: center;
     }
+
     .container h2 {
-      font-size: 28px;
+      font-size: 24px;
       margin-bottom: 10px;
     }
+
     .container p {
-      font-size: 18px;
-      color: #555;
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 20px;
     }
+
     .cta-btn {
-      margin-top: 20px;
       background-color: #ff9900;
       color: #111;
-      padding: 15px 30px;
-      font-size: 18px;
+      padding: 14px 26px;
+      font-size: 17px;
       font-weight: bold;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s;
     }
+
     .cta-btn:hover {
       background-color: #e68a00;
     }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .image-grid a img {
+      width: 300px;
+      height: 600px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .image-grid a:hover img {
+      transform: scale(1.03);
+    }
+
     footer {
-      margin-top: 60px;
+      margin-top: 50px;
       background-color: #232f3e;
       color: white;
-      padding: 15px;
-      font-size: 14px;
+      text-align: center;
+      padding: 16px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 24px;
+      }
+
+      .container h2 {
+        font-size: 20px;
+      }
+
+      .cta-btn {
+        font-size: 16px;
+        padding: 12px 20px;
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .image-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-grid a img {
+        width: 90%;
+        height: auto;
+        max-height: 400px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Easy Checkout</h1>
-    <p>Your Shortcut to the Best Amazon Deals</p>
+    <img 
+      src="https://media.licdn.com/dms/image/v2/D4E22AQHbmUgXz9AV_A/feedshare-shrink_800/B4EZPrF.BtHAAg-/0/1734816031681?e=2147483647&v=beta&t=Q4Fed0MZ9u-EP2fRfpFOAk12dowg--JAcf9IfH6rXv0" 
+      alt="Header Logo"
+    />
+    <h1>Amazon Today Deals</h1>
+    <p>Powered by Easy Checkout</p>
   </header>
 
-  <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437e1?fit=crop&w=1200&q=80" alt="Deals Banner" class="banner" />
+  <!-- 🔥 Banner -->
+  <img
+    src="https://goldmanstate.com/wp-content/uploads/2025/04/amazon_haul.jpg"
+    alt="Amazon Haul Banner"
+    class="banner"
+  />
+
+  <!-- 🔥 Image Deal Section -->
+  <div class="image-grid">
+    <!-- New Image with affiliate link -->
+    <a href="https://amzn.to/3Ev0CuP" target="_blank">
+      <img src="https://m.media-amazon.com/images/G/01/Creator-U/redesign-2023/Seasonal_Events/2025_easter/desktop-hero-v2.png" alt="Easter Deals">
+    </a>
+  </div>
 
   <div class="container">
     <h2>🔥 Limited Time Offer on Amazon!</h2>
-    <p>Click the button below to unlock this exclusive deal now.</p>
+    <p>Click the button below to grab your exclusive deal now.</p>
     <button class="cta-btn" onclick="redirectToAmazon()">View Deal on Amazon</button>
   </div>
 
@@ -106,6 +199,7 @@
         'event_category': 'Affiliate',
         'event_label': 'Amazon Redirect'
       });
+
       setTimeout(() => {
         window.location.href = "https://amzn.to/3Ev0CuP";
       }, 300);
@@ -114,3 +208,4 @@
 
 </body>
 </html>
+
